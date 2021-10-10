@@ -3,6 +3,10 @@ package com.robertocannella;
 import java.util.Scanner;
 
 public class ThirtyDaysOfCode {
+    public static int dayTwo(){
+        return 0;
+    }
+
     public static void dayOne(){
     int i = 4;
     double d = 4.0;
