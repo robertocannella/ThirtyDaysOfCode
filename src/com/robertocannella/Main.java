@@ -3,7 +3,10 @@ package com.robertocannella;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
-        ThirtyDaysOfCode.solve(12,20,8);
+        for (int i = 1; i <= 100; i++) {
+            System.out.print("i " + i +":" );
+            ThirtyDaysOfCode.weirdOrNot(i);
+        }
+
     }
 }
