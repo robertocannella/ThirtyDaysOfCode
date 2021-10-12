@@ -1,8 +1,44 @@
 package com.robertocannella;
 
+import org.w3c.dom.ls.LSOutput;
+
+import javax.sound.midi.Soundbank;
 import java.util.Scanner;
 
 public class ThirtyDaysOfCode {
+    // day four
+    public static class Person {
+        private int age;
+
+        public Person(int initialAge) {
+            if (initialAge < 0){
+                System.out.println("Age is not valid, setting age to 0.");
+                this.age = 0;
+            }else
+                this.age = initialAge;
+            // Add some more code to run some checks on initialAge
+        }
+
+        public void amIOld() {
+            // Write code determining if this person's age is old and print the correct statement:
+            if (isYoung())
+                System.out.println("You are young.");
+            else if (isTeenager())
+                System.out.println("You are a teenager.");
+            else
+                System.out.println("You are old.");
+        }
+        public boolean isTeenager(){
+            return (age >= 13 && age < 18);
+        }
+        public boolean isYoung (){
+            return (age < 13);
+        }
+        public void yearPasses() {
+            // Increment this person's age.
+            age++;
+        }
+    }
     // day three
     public static void weirdOrNot(int n){
         if (n%2 != 0) {
