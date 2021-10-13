@@ -6,6 +6,11 @@ import javax.sound.midi.Soundbank;
 import java.util.Scanner;
 
 public class ThirtyDaysOfCode {
+    // day five
+    public static void firstTenMultiples(int n){
+        for (int i=1; i<=10; i++)
+        System.out.println(n + " x " + i + " = " + i*n);
+    }
     // day four
     public static class Person {
         private int age;
