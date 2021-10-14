@@ -3,9 +3,64 @@ package com.robertocannella;
 import org.w3c.dom.ls.LSOutput;
 
 import javax.sound.midi.Soundbank;
+import java.io.OutputStream;
+import java.sql.SQLOutput;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class ThirtyDaysOfCode {
+    // day six
+    private static char[][] printOutEvenOdds( List<String> stringList ) {
+        char[][] chars = new char[ stringList.size() ][];
+        for ( int i = 0; i < stringList.size(); i++ ) {
+            chars[i] = stringList.get( i ).toCharArray();
+        }
+        return chars;
+    }
+    private static String buildString(List<Character> str){
+
+        //System.out.println("List - " + str);
+
+        // create object of StringBuilder class
+        StringBuilder sb = new StringBuilder();
+
+        // Appends characters one by one
+        for (Character ch : str) {
+            sb.append(ch);
+        }
+
+        // convert and return
+        return sb.toString();
+
+    }
+
+    public static void evenOddStrings(){
+        Scanner scanner = new Scanner(System.in);
+        int T = scanner.nextInt();
+        ArrayList<String> strings = new ArrayList<>();
+        for (int i = 0; i < T; i++) {
+            strings.add(scanner.next());
+        }
+        char[][] charArray = printOutEvenOdds(strings);
+        List<Character> odds = new ArrayList<>();
+        List<Character> evens = new ArrayList<>();
+
+        for (char[] array: charArray
+             ) {
+
+            for (int i = 0; i < array.length; i++) {
+                if (i%2 == 0)
+                    evens.add(array[i]);
+                else
+                    odds.add(array[i]);
+            }
+            System.out.println(buildString(evens) + " " + buildString(odds));
+            odds.clear();
+            evens.clear();
+        }
+    }
     // day five
     public static void firstTenMultiples(int n){
         for (int i=1; i<=10; i++)
