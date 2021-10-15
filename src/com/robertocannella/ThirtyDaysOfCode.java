@@ -4,6 +4,7 @@ import org.w3c.dom.ls.LSOutput;
 
 import javax.sound.midi.Soundbank;
 import java.io.OutputStream;
+import java.sql.Array;
 import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -11,6 +12,17 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ThirtyDaysOfCode {
+    // day seven
+    public static void reverseArray(int size, List<Integer> list){
+
+        for (int i = 0; i <size/2 ; i++) {
+            int temp = list.get(i);
+            list.set(i,list.get((size-1)-i));
+            list.set((size-1)-i,temp);
+        }
+        System.out.println(list);
+    }
+
     // day six
     private static char[][] printOutEvenOdds( List<String> stringList ) {
         char[][] chars = new char[ stringList.size() ][];
@@ -35,7 +47,6 @@ public class ThirtyDaysOfCode {
         return sb.toString();
 
     }
-
     public static void evenOddStrings(){
         Scanner scanner = new Scanner(System.in);
         int T = scanner.nextInt();
