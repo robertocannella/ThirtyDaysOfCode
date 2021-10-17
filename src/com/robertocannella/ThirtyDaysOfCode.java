@@ -9,6 +9,15 @@ import java.sql.SQLOutput;
 import java.util.*;
 
 public class ThirtyDaysOfCode {
+    // day ning
+    public static int factorial(int n) {
+        // Base Case
+        if (n <= 1)
+            return 1;
+
+        // Recursive Case
+        return n * factorial(n -1 );
+    }
     // day eight
     public static void phoneBook(){
         Scanner in = new Scanner(System.in);

@@ -5,7 +5,8 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) {
-        ThirtyDaysOfCode.phoneBook();
+        int factorial = ThirtyDaysOfCode.factorial(3);
+        System.out.println(factorial);
     }
 
 }
