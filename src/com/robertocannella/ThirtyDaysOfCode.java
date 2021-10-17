@@ -6,12 +6,28 @@ import javax.sound.midi.Soundbank;
 import java.io.OutputStream;
 import java.sql.Array;
 import java.sql.SQLOutput;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class ThirtyDaysOfCode {
+    // day eight
+    public static void phoneBook(){
+        Scanner in = new Scanner(System.in);
+        Map<String,Integer> phoneBook = new HashMap<>();
+        int n = in.nextInt();
+        for(int i = 0; i < n; i++){
+            String name = in.next();
+            int phone = in.nextInt();
+            phoneBook.put(name,phone);
+        }
+        while(in.hasNext()){
+            String s = in.next();
+            if (phoneBook.containsKey(s))
+                System.out.println(s + "=" + phoneBook.get(s));
+            else
+                System.out.println("Not found");
+        }
+        in.close();
+    }
     // day seven
     public static void reverseArray(int size, List<Integer> list){
 
@@ -22,7 +38,6 @@ public class ThirtyDaysOfCode {
         }
         System.out.println(list);
     }
-
     // day six
     private static char[][] printOutEvenOdds( List<String> stringList ) {
         char[][] chars = new char[ stringList.size() ][];
