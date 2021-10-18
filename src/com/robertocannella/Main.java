@@ -5,8 +5,8 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) {
-        int factorial = ThirtyDaysOfCode.factorial(3);
-        System.out.println(factorial);
+        int bin = ThirtyDaysOfCode.getConsecutiveOnes(524283);
+       // System.out.println(bin);
     }
 
 }

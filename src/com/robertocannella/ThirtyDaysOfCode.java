@@ -9,7 +9,47 @@ import java.sql.SQLOutput;
 import java.util.*;
 
 public class ThirtyDaysOfCode {
-    // day ning
+    // day ten
+    public static int getConsecutiveOnes(int n){
+
+        List<Integer> binary = convertToBinary(n);
+        int sum = 0;
+        int max = 0;
+        for (Integer integer : binary) {
+            if (integer == 0)
+                sum = 0;
+            else
+                sum++;
+            max = Math.max(max, sum);
+        }
+        System.out.println(binary);
+        System.out.println(max);
+        return max;
+    }
+    public static List<Integer> convertToBinary(int n){
+       List<Integer> arr = new ArrayList<>();
+       getRemainder(arr,n);
+       reverseArrayList(arr);
+       return arr;
+    }
+    private static int getRemainder(List<Integer> arr,  int n){
+        if (n <= 0)
+            return 0;
+
+        arr.add(n%2);
+        n = n/2;
+        return  getRemainder(arr, n);
+    }
+    private static List<Integer> reverseArrayList(List<Integer> arr){
+
+        for (int i = 0; i < arr.size()/2; i++) {
+            int temp = arr.get(i);
+            arr.set(i,arr.get((arr.size()-1)-i));
+            arr.set((arr.size()-1)-i,temp);
+        }
+        return arr;
+    }
+    // day nine
     public static int factorial(int n) {
         // Base Case
         if (n <= 1)
