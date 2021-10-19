@@ -9,6 +9,20 @@ import java.sql.SQLOutput;
 import java.util.*;
 
 public class ThirtyDaysOfCode {
+    // day eleven
+    public static int hourglass(List<List<Integer>> arr){
+        int max  = Integer.MIN_VALUE;
+        int total;
+        for(int row = 0; row < 4; row++){
+            for(int col = 0; col < 4; col++ ){
+                total = arr.get(row).get(col) + arr.get(row).get(col+1) + arr.get(row).get(col+2);
+                total += arr.get(row+1).get(col+1);
+                total += arr.get(row+2).get(col) + arr.get(row+2).get(col+1) + arr.get(row+2).get(col+2);
+                max = Math.max(total, max);
+            }
+        }
+        return max;
+    }
     // day ten
     public static int getConsecutiveOnes(int n){
 
