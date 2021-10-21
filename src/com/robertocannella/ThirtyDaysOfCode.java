@@ -9,6 +9,56 @@ import java.sql.SQLOutput;
 import java.util.*;
 
 public class ThirtyDaysOfCode {
+    // day twelve
+    public static class Student extends Person{
+        private int[] testScores;
+
+        Student(String firstName, String lastName, int identification, int[] scores) {
+            super(firstName, lastName, identification);
+            this.testScores  = scores;
+        }
+
+        public char calculate(){
+            int total = 0;
+
+            for(int score: testScores)
+                total+= score;
+
+            int average = total/testScores.length;
+            if (average >= 90 && average <=100)
+                return 'O';
+            if (average >= 80 && average < 90)
+                return 'E';
+            if (average >= 70 && average < 80)
+                return 'A';
+            if (average >= 55 && average < 70)
+                return 'P';
+            if (average >= 40 && average < 55)
+                return 'D';
+            else
+                return 'T';
+        }
+    }
+    static class Person {
+        protected String firstName;
+        protected String lastName;
+        protected int idNumber;
+
+        // Constructor
+        Person(String firstName, String lastName, int identification){
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.idNumber = identification;
+        }
+
+        // Print person data
+        public void printPerson(){
+            System.out.println(
+                    "Name: " + lastName + ", " + firstName
+                            + 	"\nID: " + idNumber);
+        }
+
+    }
     // day eleven
     public static int hourglass(List<List<Integer>> arr){
         int max  = Integer.MIN_VALUE;
@@ -156,10 +206,10 @@ public class ThirtyDaysOfCode {
         System.out.println(n + " x " + i + " = " + i*n);
     }
     // day four
-    public static class Person {
+    public static class PersonDay4 {
         private int age;
 
-        public Person(int initialAge) {
+        public PersonDay4(int initialAge) {
             if (initialAge < 0){
                 System.out.println("Age is not valid, setting age to 0.");
                 this.age = 0;
