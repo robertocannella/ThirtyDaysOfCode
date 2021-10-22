@@ -9,6 +9,31 @@ import java.sql.SQLOutput;
 import java.util.*;
 
 public class ThirtyDaysOfCode {
+    // day fourteen
+    class Difference {
+        private int[] elements;
+        public int maximumDifference;
+
+        // Add your code here
+        public Difference(int[] arr) {
+            this.elements = arr;
+
+        }
+
+        public void computeDifference() {
+            int max = elements[0];
+            int min = elements[0];
+            for (int element : elements) {
+                if (element > max)
+                    max = element;
+
+                if (element < min)
+                    min = element;
+            }
+
+            maximumDifference = Math.abs(max - min);
+        }
+    }
     // day thirteen
     abstract class Book {
         String title;
