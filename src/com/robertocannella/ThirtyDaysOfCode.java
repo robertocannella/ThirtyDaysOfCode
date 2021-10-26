@@ -12,6 +12,19 @@ import java.sql.SQLOutput;
 import java.util.*;
 
 public class ThirtyDaysOfCode {
+    // day seventeen
+    public static class Calculator {
+        public  int power(int n, int p) throws Exception {
+            if (n < 0 || p < 0)
+                throw new Exception("n and p should be non-negative");
+
+            if (p == 0)
+                return 1;
+
+            return n * (power(n, p - 1));
+        }
+    }
+
     // day sixteen
     public static void convertStringToInt() throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));

@@ -1,13 +1,16 @@
 package com.robertocannella;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.*;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException {
-        ThirtyDaysOfCode.convertStringToInt();
+    public static void main(String[] args)  {
+
+        ThirtyDaysOfCode.Calculator calc = new ThirtyDaysOfCode.Calculator();
+        try{
+            int pwr = calc.power(-2,2);
+            System.out.println(pwr);
+        }catch (Exception e){
+            System.out.println(e);
+        }
     }
 }
