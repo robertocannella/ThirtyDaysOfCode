@@ -12,6 +12,24 @@ import java.sql.SQLOutput;
 import java.util.*;
 
 public class ThirtyDaysOfCode {
+    // day eighteen
+    public static class palindrome {
+        Queue<Character> queue = new ArrayDeque<>();
+        Stack<Character> stack = new Stack<>();
+
+        void pushCharacter(char ch){
+            stack.push(ch);
+        }
+        void enqueueCharacter(char ch){
+            queue.add(ch);
+        }
+        char popCharacter() {
+            return stack.pop();
+        }
+        char dequeueCharacter(){
+            return  queue.remove();
+        }
+    }
     // day seventeen
     public static class Calculator {
         public  int power(int n, int p) throws Exception {
@@ -24,7 +42,6 @@ public class ThirtyDaysOfCode {
             return n * (power(n, p - 1));
         }
     }
-
     // day sixteen
     public static void convertStringToInt() throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
