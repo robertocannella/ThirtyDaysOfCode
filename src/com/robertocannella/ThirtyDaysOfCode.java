@@ -13,10 +13,30 @@ import java.util.*;
 
 public class ThirtyDaysOfCode {
     // day nineteen
+    // from geeksforgeeks
+    public static int countDivisors(int n)
+    {
+        int cnt = 0;
+        System.out.println(Math.sqrt(n));
+        for (int i = 1; i <= Math.sqrt(n); i++)
+        {
+            if (n % i == 0) {
+                // If divisors are equal,
+                // count only one
+                if (n / i == i)
+                    cnt++;
+
+                else // Otherwise, count both
+                    cnt = cnt + 2;
+            }
+        }
+        return cnt;
+    }
     interface AdvancedArithmetic{
         int divisorSum(int n);
     }
     static class Calculator2 implements AdvancedArithmetic {
+
         public int divisorSum(int n) {
             if (n == 1)
                 return 1;
@@ -27,7 +47,7 @@ public class ThirtyDaysOfCode {
 
         private int divisorSum(int n, Set<Integer> sum, int start){
             // passes HackerRank, But Causes Stack Overflow over 999
-            if ( start > n/2 )
+            if ( start > n/start )
                 return 0;
 
             if (n%start == 0)
