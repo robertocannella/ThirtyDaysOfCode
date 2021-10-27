@@ -12,6 +12,36 @@ import java.sql.SQLOutput;
 import java.util.*;
 
 public class ThirtyDaysOfCode {
+    // day nineteen
+    interface AdvancedArithmetic{
+        int divisorSum(int n);
+    }
+    static class Calculator2 implements AdvancedArithmetic {
+        public int divisorSum(int n) {
+            if (n == 1)
+                return 1;
+
+            Set<Integer> set = new HashSet<>();
+            return divisorSum( n, set, 1);
+        }
+
+        private int divisorSum(int n, Set<Integer> sum, int start){
+            if ( start > n/2 )
+                return 0;
+
+            if (n%start == 0)
+                sum.add(start);
+
+            start++;
+
+            divisorSum(n, sum, start);
+
+            int total = 0;
+            for(int number: sum)
+                total+=number;
+            return total +n;
+        }
+    }
     // day eighteen
     public static class palindrome {
         Queue<Character> queue = new ArrayDeque<>();
