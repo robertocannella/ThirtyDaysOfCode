@@ -26,6 +26,7 @@ public class ThirtyDaysOfCode {
         }
 
         private int divisorSum(int n, Set<Integer> sum, int start){
+            // passes HackerRank, But Causes Stack Overflow over 999
             if ( start > n/2 )
                 return 0;
 
