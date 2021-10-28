@@ -12,6 +12,37 @@ import java.sql.SQLOutput;
 import java.util.*;
 
 public class ThirtyDaysOfCode {
+    // day twenty
+    public static List<Integer> bubbleSort( List<Integer> a){
+        int numberOfSwaps = 0;
+        for (int i = 0; i < a.size(); i++) {
+            // Track number of elements swapped during a single array traversal
+
+
+            for (int j = 0; j < a.size()-1; j++) {
+                // Swap adjacent elements if they are in decreasing order
+                int jj = a.get(j);
+                int jjplus1 = a.get(j+1);
+                if (a.get(j) > a.get(j + 1)) {
+                    int swap = a.get(j);
+                    a.set(j, a.get(j + 1));
+                    a.set(j + 1, swap);
+                    numberOfSwaps++;
+                }
+            }
+
+            // If no elements were swapped during a traversal, array is sorted
+            if (numberOfSwaps == 0) {
+                break;
+            }
+        }
+            System.out.println("Array is sorted in " + numberOfSwaps + " swaps.");
+            System.out.println("First Element: " + a.get(0));
+            System.out.println("Last Element: " + a.get(a.size()-1));
+            return a;
+    }
+
+
     // day nineteen
     // from geeksforgeeks
     public static int countDivisors(int n)
