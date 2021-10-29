@@ -12,6 +12,11 @@ import java.sql.SQLOutput;
 import java.util.*;
 
 public class ThirtyDaysOfCode {
+    // day twentyone
+    public <T> void printArray (T[] arr){
+        for(T item : arr)
+            System.out.println(item);
+    }
     // day twenty
     public static List<Integer> bubbleSort( List<Integer> a){
         int numberOfSwaps = 0;
