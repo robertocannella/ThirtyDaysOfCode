@@ -9,13 +9,10 @@ public class Main {
 
     public static void main(String[] args)  {
 
-        List<Integer> a = new ArrayList<>();
-        a.add(3);
-        a.add(2);
-        a.add(1);
-        a.add(6);
-
-        ThirtyDaysOfCode.bubbleSort(a);
+        ThirtyDaysOfCode.EmptyBST<Integer> tree = new ThirtyDaysOfCode.EmptyBST<>();
+        var tree2 = tree.add(23);
+        System.out.println("done");
+        var height = tree2.getHeight(tree2);
 
     }
 }
