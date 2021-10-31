@@ -12,8 +12,43 @@ import java.sql.SQLOutput;
 import java.util.*;
 
 public class ThirtyDaysOfCode {
-    // day twentytwo
+    // day twentyThree
+    private Node root;
 
+    public void levelOrder(){
+        levelOrder(root);
+    }
+    public void levelOrder(Node root){
+        // enqueue current root
+        if (root == null){
+            System.out.println("");
+            return;
+        }
+
+        List<Integer> list = new ArrayList<>();
+        Queue<Node> queue = new ArrayDeque<>();
+        queue.add(root);
+
+
+        // while there are nodes to process
+        while(queue.size() > 0) {
+            // dequeue next node
+            root = queue.remove();
+
+            list.add(root.data);
+
+            if(root.leftChild != null)
+                queue.add(root.leftChild);
+
+            if(root.rightChild != null)
+                queue.add( root.rightChild );
+        }
+        String outputa = list.toString().replace("]", "");
+        String outputb = outputa.toString().replace("[","");
+        System.out.println(outputb.replace(",",""));
+
+    }
+    // day twentyTwo
        // from tutorial... doesn't work 100%  maybe just for theory
     public interface Tree<D extends Comparable>{
          public boolean isEmpty();
@@ -229,6 +264,8 @@ public class ThirtyDaysOfCode {
     public static class Node {
         int data;
         Node next;
+        Node leftChild;
+        Node rightChild;
         Node(int d) {
             data = d;
             next = null;
