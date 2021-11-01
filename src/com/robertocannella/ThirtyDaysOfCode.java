@@ -12,6 +12,36 @@ import java.sql.SQLOutput;
 import java.util.*;
 
 public class ThirtyDaysOfCode {
+    // day twentyFour
+    public static class LinkedListNode {
+        int data;
+        LinkedListNode next;
+
+        public LinkedListNode(int d) {
+            data = d;
+            next = null;
+        }
+
+    }
+    public static LinkedListNode removeDuplicates(LinkedListNode head) {
+        //Write your code here
+        if (head == null)
+            return head;
+
+        LinkedListNode current = head;
+
+        while (current.next != null ) {
+            while (current.data == current.next.data) {
+                current.next = current.next.next;
+                if (current.next == null) {
+                    return head;
+                }
+            }
+
+            current = current.next;
+        }
+        return head;
+    }
     // day twentyThree
     private Node root;
 
