@@ -12,6 +12,53 @@ import java.sql.SQLOutput;
 import java.util.*;
 
 public class ThirtyDaysOfCode {
+    // day tewntySix
+    public static int libraryFees(int[] returnDate, int[] dueDate){
+        if (returnDate[2] > dueDate[2]) // years
+            return 10000;
+        if (returnDate[2] < dueDate[2])
+            return 0;
+
+        if (returnDate[1] > dueDate[1])
+            return (returnDate[1] - dueDate[1]) * 500;
+        if (returnDate[1] < dueDate[1])
+            return 0;
+
+        if (returnDate[0] > dueDate[0])
+            return (returnDate[0] - dueDate[0]) * 15;
+
+        return 0;
+
+    }
+    // day twentyFive
+    //A prime number is a natural number greater than  that is only divisible by  and itself (note that  is not a prime). A primality algorithm is an algorithm for determining if some number, , is prime.
+    //
+    //The most basic primality algorithm is to simply iterate through each integer
+    // (where ) and determine if it evenly divides ; if  is an even divisor of ,
+    // then  is not prime. While this algorithm is , there are a number of
+    // optimizations you can perform that will reduce it to
+    // (even that can be slightly improved upon, though we will not discuss it here).
+    // What are you waiting for? Get started on today's challenge!
+    // And, when you're done, be sure to check the Editorial for a comparison of four primality algorithms.
+
+    public static void getPrimes (int n){
+        // Skip over 1 (not a prime number)
+        if (n == 1){
+            System.out.println("Not prime");
+            return;
+        }
+        boolean isPrime = true;
+
+        for (int i = 2; i <= Math.sqrt(n); i++) {
+            if ( n%i == 0){
+                isPrime = false;
+                break;
+            }
+        }
+
+        System.out.println((isPrime) ? "Prime" : "Not prime");
+
+    }
     // day twentyFour
     public static class LinkedListNode {
         int data;

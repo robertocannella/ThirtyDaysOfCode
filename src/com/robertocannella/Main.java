@@ -9,18 +9,24 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args)  {
-        ThirtyDaysOfCode.LinkedListNode node = new ThirtyDaysOfCode.LinkedListNode(1);
-        node.next = new ThirtyDaysOfCode.LinkedListNode(1);
-        node.next.next = new ThirtyDaysOfCode.LinkedListNode(1);
-        node.next.next.next = new ThirtyDaysOfCode.LinkedListNode(1);
-        node.next.next.next.next = new ThirtyDaysOfCode.LinkedListNode(1);
-        node.next.next.next.next.next = new ThirtyDaysOfCode.LinkedListNode(1);
-        node.next.next.next.next.next.next = new ThirtyDaysOfCode.LinkedListNode(1);
+        Scanner scanner = new Scanner(System.in);
 
-        ThirtyDaysOfCode.removeDuplicates(node);
 
-        System.out.println("done");
+        String [] returnInput = scanner.nextLine().split(" ");
+        String [] dueInput = scanner.nextLine().split(" ");
+        scanner.close();
+        int [] returnDate = new int[3];
+        int [] dueDate = new int[3];
 
+
+        // put into int array
+        for (int i = 0; i < returnDate.length; i++) {
+            returnDate[i] = Integer.parseInt(returnInput[i]);
+            dueDate[i] = Integer.parseInt(dueInput[i]);
+        }
+
+        int fee = ThirtyDaysOfCode.libraryFees(returnDate,dueDate);
+        System.out.println(fee);
 
     }
 }
