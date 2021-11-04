@@ -9,24 +9,12 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args)  {
-        Scanner scanner = new Scanner(System.in);
 
+            ThirtyDaysOfCode.dayTwentySeven.TestWithEmptyArray();
+             ThirtyDaysOfCode.dayTwentySeven.TestWithUniqueValues();
+             ThirtyDaysOfCode.dayTwentySeven.TestWithExactlyTwoDifferentMinimums();
+            System.out.println("OK");
 
-        String [] returnInput = scanner.nextLine().split(" ");
-        String [] dueInput = scanner.nextLine().split(" ");
-        scanner.close();
-        int [] returnDate = new int[3];
-        int [] dueDate = new int[3];
-
-
-        // put into int array
-        for (int i = 0; i < returnDate.length; i++) {
-            returnDate[i] = Integer.parseInt(returnInput[i]);
-            dueDate[i] = Integer.parseInt(dueInput[i]);
-        }
-
-        int fee = ThirtyDaysOfCode.libraryFees(returnDate,dueDate);
-        System.out.println(fee);
 
     }
 }
