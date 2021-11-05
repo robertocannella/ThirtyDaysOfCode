@@ -13,6 +13,25 @@ import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class ThirtyDaysOfCode {
+    // day twentyEight
+    public static void getGmailAddresses(HashMap<String,String> items){
+        List<String> validUsers = new ArrayList<>();
+        String myRegExString = "[a-zA-Z\\s]+";
+        String delimiter = "@";
+
+
+        for(Map.Entry<String, String> entry: items.entrySet()){
+            String[] domain = entry.getKey().split(delimiter);
+                //System.out.println(domain[0] + " " + domain[1]);
+                if (domain[1].equals("gmail.com")){
+                    validUsers.add(entry.getValue());
+                }
+        }
+        Collections.sort(validUsers);
+        for(String user: validUsers)
+            System.out.println(user);
+    }
+
     // day twentySeven
     public static class dayTwentySeven {
 
