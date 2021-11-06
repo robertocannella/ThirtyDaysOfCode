@@ -13,6 +13,21 @@ import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class ThirtyDaysOfCode {
+    // day twentyNine
+
+    public static int bitwiseAnd(int N, int K) {
+        int max = 0;
+        // Write your code here
+        for (int i = 1; i < N; i++) {
+            for (int j = i+1; j <= N; j++) {
+                int bitwiseAnd = (i&j);
+                if (bitwiseAnd > max && bitwiseAnd < K){
+                    max = bitwiseAnd;
+                }
+            }
+        }
+        return max;
+    }
     // day twentyEight
     public static void getGmailAddresses(HashMap<String,String> items){
         List<String> validUsers = new ArrayList<>();
